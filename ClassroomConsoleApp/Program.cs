@@ -24,6 +24,7 @@ public class Program
 
 
         restartMainMenu:
+        Console.Clear();
         Console.WriteLine("----- Menu -----");
         Console.Write("[1] Create Classroom\n" +
             "[2] Classrooms info\n" +
@@ -40,6 +41,7 @@ public class Program
         {
             case "1":
                 CreateClassroom(classroomPath, classrooms);
+                Console.ReadLine();
                 goto restartMainMenu;
             case "2":
                 Console.WriteLine("----- Classrooms List -----");
@@ -47,47 +49,59 @@ public class Program
                 {
                     Console.WriteLine(classroom);
                 }
+                Console.ReadLine();
                 goto restartMainMenu;
             case "3":
                 CreateStudent(classroomPath, classrooms);
+                Console.ReadLine();
                 goto restartMainMenu;
             case "4":
                 DeleteStudent(classroomPath, classrooms);
+                Console.ReadLine();
                 goto restartMainMenu;
             case "5":
                 UpdateStudent(classroomPath, classrooms);
+                Console.ReadLine();
                 goto restartMainMenu;
             case "6":
                 ShowAllStudents(classrooms);
+                Console.ReadLine();
                 goto restartMainMenu;
             case "7":
-                Console.Write("Id: ");
-                int id ;
-                bool isCorrect = int.TryParse(Console.ReadLine(), out id);
-                if (!isCorrect)
-                {
-                    Colored.WriteLine("Invalid input for id", ConsoleColor.DarkRed);
-                    goto restartMainMenu;
-                }
-                foreach (var classroom in classrooms)
-                {
-                    var foudStudent = classroom.Students.FirstOrDefault(x => x.Id == id);
-                    if (foudStudent is null)
-                        continue;
-                    Console.WriteLine($"{foudStudent}, Group: {classroom.Name}, Type: {classroom.ClassType}");
-                    goto restartMainMenu;
-                }
-                Colored.WriteLine("Student not found", ConsoleColor.DarkRed);
+                GetStudentById(classrooms);
+                Console.ReadLine();
                 goto restartMainMenu;
             case "0":
                 Colored.WriteLine("GoodBye...", ConsoleColor.DarkYellow);
                 return;
             default:
                 Colored.WriteLine("Invalid input", ConsoleColor.DarkRed);
+                Console.ReadLine();
                 goto restartMainMenu;
         }
 
 
+    }
+
+    private static void GetStudentById(List<Classroom> classrooms)
+    {
+        Console.Write("Id: ");
+        int id;
+        bool isCorrect = int.TryParse(Console.ReadLine(), out id);
+        if (!isCorrect)
+        {
+            Colored.WriteLine("Invalid input for id", ConsoleColor.DarkRed);
+            return;
+        }
+        foreach (var classroom in classrooms)
+        {
+            var foudStudent = classroom.Students.FirstOrDefault(x => x.Id == id);
+            if (foudStudent is null)
+                continue;
+            Console.WriteLine($"{foudStudent}, Group: {classroom.Name}, Type: {classroom.ClassType}");
+            return;
+        }
+        Colored.WriteLine("Student not found", ConsoleColor.DarkRed);
     }
 
     private static void UpdateStudent(string classroomPath, List<Classroom> classrooms)
