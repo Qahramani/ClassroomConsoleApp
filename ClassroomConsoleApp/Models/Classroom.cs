@@ -29,12 +29,13 @@ public class Classroom
         if ((int)ClassType == Students.Count)
             throw new CapacityLimitException($"Classroom is full, capacity is {(int)ClassType}");
         Students.Add(student);
+        Colored.WriteLine("Student added successfully", ConsoleColor.DarkGreen);
     }
     public Student GetStudentById(int id)
     {
         foreach (var student in Students)
         {
-            if(student.Id == id)
+            if (student.Id == id)
                 return student;
         }
         throw new StudentNotFoundException("Student not found");
@@ -43,7 +44,7 @@ public class Classroom
     {
         foreach (var student in Students)
         {
-            if(student.Id == id)
+            if (student.Id == id)
             {
                 Students.Remove(student);
                 Colored.WriteLine("Student deleted successfully", ConsoleColor.DarkGreen);
@@ -53,9 +54,23 @@ public class Classroom
         throw new StudentNotFoundException("Student not found");
     }
 
+    public void UpdateStudent(int id, string name, string surname)
+    {
+        foreach (var student in Students)
+        {
+            if(student.Id == id)
+            {
+                student.Name = name;
+                student.Surname = surname;
+                Colored.WriteLine("Student updated successfully", ConsoleColor.DarkGreen);
+                return;
+            }
+        }
+        throw new StudentNotFoundException("Student not found");
+    }
     public override string ToString()
     {
-        return $"Id: {Id}, Class name: {Name}, Type: {ClassType}, Student's Count: {Students.Count}, Class Capacity: {Students.Capacity}";
+        return $"Id: {Id}, Class name: {Name}, Type: {ClassType}, Student's Count: {Students.Count}, Class Capacity: {(int)ClassType}";
     }
 
 }

@@ -1,1 +1,51 @@
-[{"Id":1,"Name":"AA111","ClassType":15},{"Id":2,"Name":"BP123","ClassType":20}]
+[
+  {
+    "Students": [
+      {
+        "Id": 1,
+        "Name": "Canel",
+        "Surname": "Qahramani"
+      },
+      {
+        "Id": 2,
+        "Name": "Sinara",
+        "Surname": "Quliyeva"
+      },
+      {
+        "Id": 11,
+        "Name": "Aysun",
+        "Surname": "Eminli"
+      }
+    ],
+    "Id": 1,
+    "Name": "PP111",
+    "ClassType": 15
+  },
+  {
+    "Students": [
+      {
+        "Id": 3,
+        "Name": "Gunel",
+        "Surname": "Qahramani"
+      },
+      {
+        "Id": 4,
+        "Name": "Samira",
+        "Surname": "Kamilova"
+      },
+      {
+        "Id": 5,
+        "Name": "Fatima",
+        "Surname": "Veliyeva"
+      },
+      {
+        "Id": 18,
+        "Name": "Nafisa",
+        "Surname": "Akiyeva"
+      }
+    ],
+    "Id": 2,
+    "Name": "BP303",
+    "ClassType": 20
+  }
+]
