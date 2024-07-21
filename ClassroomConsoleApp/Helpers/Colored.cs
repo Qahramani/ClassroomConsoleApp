@@ -1,4 +1,6 @@
 ﻿
+using ClassroomConsoleApp.Models;
+
 namespace ClassroomConsoleApp.Helpers;
 
 public static class Colored
