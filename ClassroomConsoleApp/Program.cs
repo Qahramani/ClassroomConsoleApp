@@ -20,10 +20,14 @@ public class Program
             result = sr.ReadToEnd();
         }
         if (result != "")
+        {
             classrooms = JsonConvert.DeserializeObject<List<Classroom>>(result);
 
+            Classroom.id = classrooms.Max(x => x.Id);
+            Classroom.studentId = GetMaxStudentId(classrooms);
+        }
 
-        restartMainMenu:
+    restartMainMenu:
         Console.Clear();
         Console.WriteLine("----- Menu -----");
         Console.Write("[1] Create Classroom\n" +
@@ -253,7 +257,7 @@ public class Program
 
         Classroom classRoom = new Classroom(groupName, type);
         classrooms.Add(classRoom);
-        classRoom.Id = ++Classroom._id;
+        classRoom.Id = ++Classroom.id;
         Convertion(classroomPath, classrooms);
         Colored.WriteLine($"Classroom \"{classRoom.Name}\" created successfully", ConsoleColor.DarkGreen);
     }
@@ -283,5 +287,19 @@ public class Program
         }
 
         classrooms = JsonConvert.DeserializeObject<List<Classroom>>(result);
+    }
+
+    private static int GetMaxStudentId(List<Classroom> classrooms)
+    {
+        int maxId = 0;
+        foreach (var classroom in classrooms)
+        {
+            foreach (var student in classroom.Students)
+            {
+                if(student.Id > maxId)
+                    maxId = student.Id;
+            }
+        }
+        return maxId;
     }
 }

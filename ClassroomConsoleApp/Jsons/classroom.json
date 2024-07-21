@@ -1,43 +1,55 @@
 [
   {
-    "Students": [
-      {
-        "Id": 4,
-        "Name": "Fatima",
-        "Surname": "Veliyeva"
-      }
-    ],
+    "Students": [],
     "Id": 1,
-    "Name": "AD231",
+    "Name": "HH543",
     "ClassType": 15
   },
   {
     "Students": [
       {
+        "Id": 1,
+        "Name": "Gunel",
+        "Surname": "Qahramani"
+      },
+      {
         "Id": 2,
-        "Name": "Samira",
-        "Surname": "Kamilova"
+        "Name": "Fatima",
+        "Surname": "Veliyeva"
       }
     ],
     "Id": 2,
-    "Name": "GH654",
+    "Name": "HJ123",
+    "ClassType": 20
+  },
+  {
+    "Students": [
+      {
+        "Id": 4,
+        "Name": "Hil",
+        "Surname": "Hiler"
+      }
+    ],
+    "Id": 3,
+    "Name": "HP753",
+    "ClassType": 15
+  },
+  {
+    "Students": [],
+    "Id": 4,
+    "Name": "IP342",
     "ClassType": 15
   },
   {
     "Students": [
       {
         "Id": 3,
-        "Name": "Rizvan",
-        "Surname": "Memmedzade"
-      },
-      {
-        "Id": 5,
-        "Name": "Sinara",
-        "Surname": "Quliyeva"
+        "Name": "Hello",
+        "Surname": "Hello"
       }
     ],
-    "Id": 3,
-    "Name": "GT555",
+    "Id": 5,
+    "Name": "PO838",
     "ClassType": 20
   }
 ]
