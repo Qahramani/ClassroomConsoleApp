@@ -253,7 +253,7 @@ public class Program
 
         Classroom classRoom = new Classroom(groupName, type);
         classrooms.Add(classRoom);
-
+        classRoom.Id = ++Classroom._id;
         Convertion(classroomPath, classrooms);
         Colored.WriteLine($"Classroom \"{classRoom.Name}\" created successfully", ConsoleColor.DarkGreen);
     }

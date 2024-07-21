@@ -2,50 +2,42 @@
   {
     "Students": [
       {
-        "Id": 1,
-        "Name": "Sinara",
-        "Surname": "Quliyeva"
-      },
-      {
-        "Id": 2,
-        "Name": "Aysun",
-        "Surname": "Eminli"
+        "Id": 4,
+        "Name": "Fatima",
+        "Surname": "Veliyeva"
       }
     ],
     "Id": 1,
-    "Name": "PP111",
+    "Name": "AD231",
+    "ClassType": 15
+  },
+  {
+    "Students": [
+      {
+        "Id": 2,
+        "Name": "Samira",
+        "Surname": "Kamilova"
+      }
+    ],
+    "Id": 2,
+    "Name": "GH654",
     "ClassType": 15
   },
   {
     "Students": [
       {
         "Id": 3,
-        "Name": "Gunel",
-        "Surname": "Qahramani"
-      },
-      {
-        "Id": 4,
-        "Name": "Samira",
-        "Surname": "Kamilova"
+        "Name": "Rizvan",
+        "Surname": "Memmedzade"
       },
       {
         "Id": 5,
-        "Name": "Fatima",
-        "Surname": "Veliyeva"
-      },
-      {
-        "Id": 6,
-        "Name": "Nafisa",
-        "Surname": "Akiyeva"
-      },
-      {
-        "Id": 7,
-        "Name": "Hello",
-        "Surname": "World"
+        "Name": "Sinara",
+        "Surname": "Quliyeva"
       }
     ],
-    "Id": 2,
-    "Name": "BP303",
+    "Id": 3,
+    "Name": "GT555",
     "ClassType": 20
   }
 ]

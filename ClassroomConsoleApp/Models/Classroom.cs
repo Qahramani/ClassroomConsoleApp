@@ -6,8 +6,9 @@ namespace ClassroomConsoleApp.Models;
 
 public class Classroom
 {
-    private static int _id;
-    public int Id { get; }
+    private static int _studentId;
+    public static int _id;
+    public int Id { get;  set; }
     public string Name { get; set; }
     public ClassType ClassType { get; set; }
     public List<Student> Students;
@@ -17,9 +18,10 @@ public class Classroom
         get => Students[index];
         set => Students[index] = value;
     }
+
     public Classroom(string name, ClassType classType)
     {
-        Id = ++_id;
+        //Id = ++_id;
         Name = name;
         ClassType = classType;
         Students = new List<Student>((int)classType);
@@ -29,6 +31,7 @@ public class Classroom
         if ((int)ClassType == Students.Count)
             throw new CapacityLimitException($"Classroom is full, capacity is {(int)ClassType}");
         Students.Add(student);
+        student.Id = ++_studentId;
         Colored.WriteLine("Student added successfully", ConsoleColor.DarkGreen);
     }
     public Student GetStudentById(int id)
